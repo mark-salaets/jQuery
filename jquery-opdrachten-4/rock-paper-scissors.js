@@ -1,6 +1,6 @@
 $(document).ready(function() {
   let playerPick;
-  let computerPick = Math.floor(Math.random() * 3); //random number (0, 1 or 2)
+  let computerPick;
   let result; //from the players perspective
   let winAmount = 0;
   let loseAmount = 0;
@@ -26,7 +26,7 @@ $(document).ready(function() {
   })
 
   $("#btn").click(function() {
-
+    computerPick= Math.floor(Math.random() * 3);
     switch (playerPick) {
       case 0:                                 //user picks rock
 
@@ -71,14 +71,14 @@ $(document).ready(function() {
 
     }
 
-    computerPick = Math.floor(Math.random() * 3); //reset computerPick
+    // computerPick = Math.floor(Math.random() * 3); //reset computerPick
     let winRatio = winAmount / (winAmount + loseAmount + drawAmount);
 
 
-    // console.log("player: " + playerPick);
-    // console.log("computer: " + computerPick);
-    // console.log("result: " + result);
-    // console.log("win/lose/draw " + winAmount + loseAmount + drawAmount);
+    console.log("player: " + playerPick);
+    console.log("computer: " + computerPick);
+    console.log("result: " + result);
+    console.log("win/lose/draw " + winAmount + loseAmount + drawAmount);
     // console.log(winRatio);
 
     $("#result").html("you chose: " + playerPick + "\nthe computer chose: " + computerPick + "\nresult: " + result);
